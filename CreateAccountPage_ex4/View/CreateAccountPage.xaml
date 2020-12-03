@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:CreateAccountPage_ex4.ViewModel"
+             x:Class="CreateAccountPage_ex4.View.CreateAccountPage" Title="CREATE ACCOUNT">
+    <ContentPage.BindingContext>
+        <vm:CreateAccountViewModel></vm:CreateAccountViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="userName" Text="{Binding UserName}" Placeholder="User name"/>
+            <Entry x:Name="firstName" Text="{Binding FirstName}" Placeholder="First Nname"/>
+            <Entry x:Name="lastName" Text="{Binding LastName}" Placeholder="Last name"/>
+            <Entry x:Name="emai" Text="{Binding Email}" Placeholder="email"/>
+            <Entry x:Name="password" Text="{Binding Password}" Placeholder="password"/>
+            <Entry x:Name="passwordConfirm" Text="{Binding PasswordConfirm}" Placeholder="passwordConfirm"/>
+            <Label x:Name="lblAlert" Text="{Binding AlertContent,Mode=OneWay}" IsVisible="{Binding TurnAlertLabel, Mode=OneWay}"/>
+            <Button x:Name="CreateAccount" Text="Ctreate Account" Command="{Binding cmdCreateAccount}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
